@@ -13,8 +13,8 @@ The official package correspondance email is csnp@cornell.edu, and this is the a
 Other authors on the project are: Michael Genkin (mg324@cornell.edu), Liuyuan Chen, and Matthew Brashears (meb299@cornell.edu). My Cornell email is geb97@cornell.edu.
 
 
-~~Notes~~
+===Note===
+
 Package was built on R 3.0.1. We plan to support older R versions in the future, but do not at this time.
 
-~~Things to add~~
-
+===Things to add===
