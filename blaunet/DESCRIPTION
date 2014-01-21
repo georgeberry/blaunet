@@ -1,0 +1,12 @@
+Package: Blaunet
+Type: Package
+Title: Calculate and Analyze Blau statuses for measuring social distance
+Depends: network (>= 1.7.1)
+Version: 1.0.0
+Author: Michael Genkin [aut], George Berry [aut], Liyuan Chen [aut], Matthew Brashears [aut]
+Maintainer: Michael Genkin <csnp@cornell.edu>
+Description: An integrated set of tools to calculate and analyze Blau statuses quantifying social distance between individuals belonging to organizations. Relational (network) data may be incorporated for additional analyses.
+License: GPL-3
+URL: http://csnp.soc.cornell.edu/, https://github.com/georgeberry/blaunet
+Repository: CRAN
+Date/Publication: 2014-01-20
