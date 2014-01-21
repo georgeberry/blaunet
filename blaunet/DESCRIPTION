@@ -1,7 +1,7 @@
 Package: Blaunet
 Type: Package
 Title: Calculate and Analyze Blau statuses for measuring social distance
-Depends: network (>= 1.7.1)
+Depends: R (>= 3.0.0), network (>= 1.7.1)
 Version: 1.0.0
 Author: Michael Genkin [aut], George Berry [aut], Liyuan Chen [aut], Matthew Brashears [aut]
 Maintainer: Michael Genkin <csnp@cornell.edu>
