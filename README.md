@@ -18,5 +18,7 @@ Other authors on the project are: Michael Genkin (mg324@cornell.edu), Liuyuan Ch
 Package was built on R 3.0.1. We plan to support older R versions in the future, but do not at this time.
 
 ===Things to add===
+
 [ ] Make helpfiles accessible directly from R, rather than just in the documentation PDF.
+
 [ ] Incorporate a "citation" function and output authorship on program loading.
