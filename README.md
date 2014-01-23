@@ -11,3 +11,14 @@ I'm one of several creators of this package. Since I've done most of the recent 
 The official package correspondance email is csnp@cornell.edu, and this is the appropriate place for most questions about this package.
 
 Other authors on the project are: Michael Genkin (mg324@cornell.edu), Liuyuan Chen, and Matthew Brashears (meb299@cornell.edu). My Cornell email is geb97@cornell.edu.
+
+
+===Note===
+
+Package was built on R 3.0.1. We plan to support older R versions in the future, but do not at this time.
+
+===Things to add===
+
+[ ] Make helpfiles accessible directly from R, rather than just in the documentation PDF.
+
+[ ] Incorporate a "citation" function and output authorship on program loading.
