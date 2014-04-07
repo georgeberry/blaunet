@@ -90,7 +90,7 @@ nodal.global <- function(blauObj, dev.range=1.5, ecologies.off = FALSE){
     }    
     blauObj <- calc.nodal.ecology(blauObj, uniqueEcologies, mode = "global")
   }
-  colnames(blauObj$nodalGlobal) <- c("TotalOrgs", "Nicher", "MemList")
+  colnames(blauObj$nodalGlobal) <- c("TotalOrgs", "Nicher", "NicheList")
   
   return(blauObj)
 }
@@ -271,6 +271,8 @@ ecology.summary <- function(blauObj, percent = FALSE){
     #get this by summing up all isInNiche rows with sum = 1
     mat.diagonal <- rep(0, ncol(focalNiches))
 
+    if (length(mat.diagonal) > 0){
+
     for (node in 1:nrow(focalNiches)){
       if(sum(focalNiches[node,]) == 1){
         mat.diagonal <- mat.diagonal + focalNiches[node,]
@@ -288,6 +290,7 @@ ecology.summary <- function(blauObj, percent = FALSE){
     }
 
     sum.ecology <- rbind(sum.ecology, cbind(cbind(rep(ecologyId, ncol(blauObj$memberships)), colnames(blauObj$memberships)), sum.mat))
+	}
   }
   rownames(sum.ecology) <- NULL
   return(sum.ecology)

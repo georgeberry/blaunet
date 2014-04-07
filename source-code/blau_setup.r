@@ -170,6 +170,17 @@ blau <- function(square.data, graph = NULL, directed.el = FALSE, node.ids = NULL
     rownames(blauObj$primaryMembership) <- blauObj$ids[,1]
   }
 
+  #missing weight values
+  presentObs <- complete.cases(blauObj$weights)
+
+  blauObj$ids <- blauObj$ids[presentObs, , drop=FALSE]
+  blauObj$dimensions <- blauObj$dimensions[presentObs, , drop=FALSE]
+  blauObj$memberships <- blauObj$memberships[presentObs, , drop=FALSE]
+  blauObj$weights <- blauObj$weights[presentObs, , drop=FALSE]
+
+  if (!is.null(blauObj$primaryMembership)){
+    blauObj$primaryMembership <- blauObj$primaryMembership[presentObs, , drop=FALSE]
+  }
 
   #for the soul who decides to input a character matrix
   #this is here because datatypes in R can get confusing when both characters and numbers are stored in a data.frame
