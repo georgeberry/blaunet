@@ -269,9 +269,7 @@ ecology.summary <- function(blauObj, percent = FALSE){
 
     #how many individuals are exclusively in a niche?
     #get this by summing up all isInNiche rows with sum = 1
-    mat.diagonal <- rep(0, ncol(focalNiches))
-
-    if (length(mat.diagonal) > 0){
+    mat.diagonal <- as.matrix(rep(0, ncol(focalNiches)))
 
     for (node in 1:nrow(focalNiches)){
       if(sum(focalNiches[node,]) == 1){
@@ -290,7 +288,6 @@ ecology.summary <- function(blauObj, percent = FALSE){
     }
 
     sum.ecology <- rbind(sum.ecology, cbind(cbind(rep(ecologyId, ncol(blauObj$memberships)), colnames(blauObj$memberships)), sum.mat))
-	}
   }
   rownames(sum.ecology) <- NULL
   return(sum.ecology)

@@ -16,6 +16,8 @@ blau <- function(square.data, graph = NULL, directed.el = FALSE, node.ids = NULL
     square.data <- square.data[-excluded]    
   }
 
+  #need: put this after everything has been created
+  #right now can cause unexpected behavior
   if (complete.cases == TRUE){
     square.data <- square.data[complete.cases(as.data.frame(square.data)),]
   }
