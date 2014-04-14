@@ -83,7 +83,7 @@ calc.niches <- function(blauObj, dev.range) {
   #overwrite NAs with zeroes
   blauObj$isInNiche[is.na(blauObj$isInNiche)] <- 0
 
-  colnames(blauObj$isInNiche) <- colnames(blauObj$memberships)
+  colnames(blauObj$isInNiche) <- vapply(colnames(blauObj$memberships), function(x) paste(x, "niche", sep="_"), "a")
   rownames(blauObj$isInNiche) <- rownames(blauObj$memberships)
   
   return(blauObj)
@@ -331,7 +331,7 @@ calc.niches.ecology <- function(blauObj, uniqueEcologies, dev.range){
   uniqueEcologies <- uniqueEcologies[!is.na(uniqueEcologies)]
   
   blauObj$isInNiche <- matrix(0, nrow = nrow(blauObj$dimensions), ncol = (ncol(blauObj$memberships) + 1)) #extra column for ecology names
-  colnames(blauObj$isInNiche) <- c(colnames(blauObj$memberships), 'ecologyNames')
+  colnames(blauObj$isInNiche) <- c(vapply(colnames(blauObj$memberships), function(x) paste(x, "niche", sep="_"), "a"), 'ecologyNames')
   rownames(blauObj$isInNiche) <- blauObj$ids[,1]
   
   for(ecologyId in uniqueEcologies){ #iterate through each ecology: all of the calculations for the ecology happen here and they are appended to $isInNiche, $topbounds, and $lowbounds
